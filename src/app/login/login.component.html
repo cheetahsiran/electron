@@ -1,0 +1,57 @@
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('../../assets/imgs/bg-01.jpg');">
+    <div class="wrap-login100 p-l-34 p-r-40 p-t-25 p-b-65">
+      <form class="login100-form validate-form" *ngIf="showLogin">
+        <div class="text-center img-class">
+          <img src="../../assets/imgs/saint-gobain-logo.png" width="192px" height="auto">
+        </div>
+        <span class="login100-form-title p-t-72 p-b-40">
+          Login
+        </span>
+        <div class="form-group p-b-20">
+          <input type="text" class="form-control custom-login-input" [(ngModel)]="uName" name="username" placeholder="Email ID">
+          <span *ngIf="unameError!=''" class="errMessage">{{unameError}}</span>
+          <span *ngIf="emailError!=''" class="errMessage">{{emailError}}</span>
+        </div>
+        <div class="form-group p-b-25">
+          <input type="password" class="form-control custom-login-input" [(ngModel)]="pWord" name="password" placeholder="Password">
+          <span *ngIf="pwordError!=''" class="errMessage">{{pwordError}}</span>
+        </div>
+        <div class="text-right">
+          <span (click)="forgetPassword()">
+            Forgot password?
+          </span>
+        </div>
+        <div class="text-center p-t-49 p-b-70">
+          <button type="button" class="btn btn-primary btn-lg custom-login-button" (click)="checkLogin()">Login</button>
+        </div>
+      </form>
+      <form class="login100-form validate-form" *ngIf="showForget">
+        <div class="forget-password-back">
+          <div class="p-r-15 cursor-pnt" (click)="gotoLogin()">
+            <i class="fa fa-arrow-left fs-24"></i>
+          </div>
+          <div class="back-text">Back</div>
+        </div>
+        <span class="login100-form-title p-t-100 p-b-15">
+          Forgot Password
+        </span>
+        <span class="login100-form-subtitle  p-b-40">
+          Please enter a valid email id
+        </span>
+        <div class="text-center p-t-15 p-b-25">
+          <img src="../assets/icon/forget.png" width="84px" height="auto">
+        </div>
+        <div class="form-group p-b-10">
+          <input type="text" class="form-control custom-login-input" placeholder="Email ID" name="forgetEmail" [(ngModel)]="fEmail">
+          <span *ngIf="funameError!=''" class="errMessage">{{funameError}}</span>
+          <span *ngIf="femailError!=''" class="errMessage">{{femailError}}</span>
+        </div>
+
+        <div class="text-center p-t-49">
+          <button type="button" class="btn btn-primary btn-lg custom-login-button" (click)="sendForgetPassword()">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
